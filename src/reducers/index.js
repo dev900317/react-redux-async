@@ -1,10 +1,6 @@
-const PostListReducer = (posts = [], action) => {
-  switch (action.type) {
-    case 'FETCH_POSTS':
-      return action.payload;
-    default:
-      return posts;
-  }
-};
+import { combineReducers } from 'redux';
+import postsReducer from './postsReducer';
 
-export default PostListReducer;
+export default combineReducers({
+  posts: postsReducer,
+});

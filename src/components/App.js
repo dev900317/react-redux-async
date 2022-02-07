@@ -5,7 +5,6 @@ import { styled } from '@stitches/react';
 const S = {};
 
 S.Container = styled('div', {
-  backgroundColor: 'lightBlue',
   maxWidth: '900px',
   margin: '50px auto',
 });
