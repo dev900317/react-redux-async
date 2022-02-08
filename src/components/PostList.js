@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions';
 import { styled } from '@stitches/react';
+import UserHeader from './UserHeader';
 
 const ContainerS = styled('ul', {
   listStyle: 'none',
@@ -34,6 +35,7 @@ class PostList extends React.Component {
         <PostItemS key={post.id}>
           <HeaderS>{post.title}</HeaderS>
           <PostBodyS>{post.body}</PostBodyS>
+          <UserHeader userId={post.userId} />
         </PostItemS>
       );
     });
@@ -51,11 +53,3 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, { fetchPosts })(PostList);
-
-// const PostList = (props) => {
-//   useEffect(() => {
-//     props.fetchPosts();
-//   }, []);
-
-//   return <div>test</div>;
-// };
